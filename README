@@ -1,0 +1,131 @@
+Student Record Management System
+
+Project Overview
+
+Project Name:Student Record Management System  
+Project Type:Mini Project – II  
+Programming Language: C  
+Data Structure:Singly Linked List  
+Executable Name:student 
+Data File:student.dat
+
+Objective
+
+To develop a menu-driven Student Record Management System using C programming. The project uses a singly linked list, dynamic memory allocation, modular programming, searching, sorting and file handling to manage student records.
+
+Features
+
+The application provides the following functionalities:
+
+1. Add New Record (a/A)
+   - Creates a new student node using malloc().
+   - Automatically assigns the smallest available positive roll number.
+   - Accepts student name and percentage.
+   - Maintains unique roll numbers.
+
+2. Delete Record (d/D)
+   - Deletes a student record using roll number or name.
+   - Handles duplicate student names by displaying matching records and asking for the required roll number.
+   - Releases deleted node memory using free().
+
+3. Display Records (s/S)
+   - Displays all student records in tabular format.
+   - Displays an appropriate message when the list is empty.
+
+4. Modify Record (m/M)
+   - Searches records using roll number, name or percentage.
+   - Allows modification of student name and percentage.
+   - Keeps the original roll number unchanged.
+
+5. Save Records (v/V)
+   - Saves student records into student.dat.
+   - Uses file handling to preserve student information.
+
+6. Exit (e/E)
+   - Provides two options:
+     - Save and Exit.
+     - Exit Without Saving.
+   - Releases allocated memory before termination.
+
+7. Sort Records (t/T)
+   - Sorts student records alphabetically by name.
+   - Sorts student records by percentage in descending order.
+
+8. Delete All Records (l/L)
+   - Deletes all nodes from the linked list.
+   - Frees dynamically allocated memory.
+   - Sets the head pointer to NULL.
+   - Does not automatically delete student.dat.
+
+9. Reverse the List (r/R)
+   - Reverses the singly linked list by changing node pointers.
+   - Does not create additional nodes.
+
+Project Structure
+Student_Record/
+│
+├── stud_main.c       # Main function and menu
+├── stud_add.c        # Add student records
+├── stud_del.c        # Delete student records
+├── stud_show.c       # Display student records
+├── stud_mod.c        # Modify student records
+├── stud_sort.c       # Sort student records
+├── stud_reverse.c    # Reverse the linked list
+├── stud_save.c       # Save and load student records
+├── student.h         # Structure and function declarations
+├── Makefile          # Compilation instructions
+└── README.md         # Project documentation
+
+
+Structure Definition
+
+Each student record contains:
+
+- rollno– Unique student roll number.
+- name – Student name (maximum 49 characters).
+- percentage – Student percentage.
+- next – Pointer to the next student node.
+
+Concepts Used
+- C Programming
+- Structures
+- Pointers
+- Singly Linked Lists
+- Dynamic Memory Allocation (malloc() and free())
+- File Handling (fopen(), fscanf(), fprintf(), fclose())
+- String Handling
+- Searching and Sorting
+- Modular Programming
+- Makefile
+
+Compilation
+
+Compile the project using:
+make
+This generates the executable named student.
+Execution
+Run the application using:
+./student
+
+Clean Build Files
+
+To remove generated object files and the executable:
+make clean
+File Handling
+- Student records are stored in student.dat.
+- At program startup, saved records are loaded into the linked list if the file exists.
+- If the file does not exist, the application starts with an empty list.
+- Changes made in memory are saved only when the user explicitly selects Save or Save and Exit.
+- Exit Without Saving does not save the current changes.
+
+Input Validation
+The application is designed to handle:
+- Percentage values between 0.00 and 100.00.
+- Positive and unique roll numbers.
+- Empty student names.
+- Invalid menu choices.
+- Attempts to delete or modify unavailable records.
+- Empty linked lists.
+
+Conclusion
+The Student Record Management System demonstrates the practical implementation of singly linked lists, dynamic memory allocation, modular programming, searching, sorting and file handling in C. It provides an organized way to add, delete, display, modify, sort, reverse, save and load student records.
